@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trattoria La Pasta</title>
+  <meta name="description" content="Trattoria La Pasta – auténtica pasta italiana, ambiente cálido y reservas fáciles.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header aria-label="Barra de navegación">
+    <div class="logo">
+      🍝 <span>Trattoria La Pasta</span>
+    </div>
+    <nav aria-label="Menú principal">
+      <a href="#menu">Menú</a>
+      <a href="#info">Nosotros</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero / Info + breve descripción -->
+    <section class="hero" id="info" aria-label="Información del restaurante">
+      <div class="info" aria-label="Descripción del restaurante">
+        <h1>Trattoria La Pasta</h1>
+        <div class="badges">
+          <div class="badge">Pasta artesanal</div>
+          <div class="badge">Recetas italianas</div>
+          <div class="badge">Hecho con amor</div>
+        </div>
+        <p class="description">
+          En Trattoria La Pasta celebramos la tradición italiana con pastas hechas a mano, salsas ricas y sabores que te transportan a la Toscana. Ambiente íntimo, ingredientes frescos y pasión por la cocina.
+        </p>
+        <p><strong>Horario:</strong> Mar - Dom: 12:00 PM - 11:00 PM</p>
+        <p><strong>Dirección:</strong> Via Roma 45, Ciudad Ejemplo</p>
+      </div>
+
+      <!-- Menú rápido -->
+      <div class="info" id="menu" aria-label="Menú del restaurante">
+        <h2 class="section-title">Nuestro Menú de Pasta</h2>
+        <div class="menu-grid" aria-label="Lista de platos">
+          <div class="menu-card" aria-label="Plato: Spaghetti Carbonara">
+            <h3>Spaghetti Carbonara</h3>
+            <p>Spaghetti al dente con salsa cremosa de huevo, pecorino romano y panceta crujiente.</p>
+            <p class="price">$32.000</p>
+          </div>
+          <div class="menu-card" aria-label="Plato: Lasagna al forno">
+            <h3>Lasagna al forno</h3>
+            <p>Capas de pasta, ragù de carne, bechamel y queso gratinado.</p>
+            <p class="price">$38.000</p>
+          </div>
+          <div class="menu-card" aria-label="Plato: Tagliatelle al pesto">
+            <h3>Tagliatelle al pesto</h3>
+            <p>Pasta fresca con pesto genovés de albahaca, piñones y parmesano.</p>
+            <p class="price">$30.000</p>
+          </div>
+          <div class="menu-card" aria-label="Plato: Tiramisu">
+            <h3>Tiramisú</h3>
+            <p>Postre clásico con mascarpone, café espresso y cacao espolvoreado.</p>
+            <p class="price">$14.000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="map-wrapper" id="ubicacion" aria-label="Mapa del restaurante">
+      <div class="section-title">Dónde encontrarnos</div>
+      <iframe 
+        aria-label="Mapa integrado de Google Maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1234567890123!2d-74.0817507846695!3d4.609710643079206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99b5b1b1b1b1%3A0xabcdefabcdefabcd!2sPlaza%20de%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1701660000000" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <!-- Pie con más detalles -->
+    <footer class="footer" id="contacto" aria-label="Pie de página">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Sobre nosotros</h4>
+          <p class="tagline">"La pasta es amor en cada bocado."</p>
+          <p>Desde 2015 trayendo a tu mesa recetas italianas auténticas, con pasta fresca hecha internamente y salsas preparadas como en casa de la nonna.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p><strong>Teléfono:</strong> +57 300 9876543</p>
+          <p><strong>Email:</strong> reservas@lapasta.com</p>
+          <p><strong>Dirección:</strong> Via Roma 45, Ciudad Ejemplo</p>
+        </div>
+        <div class="footer-section">
+          <h4>Redes</h4>
+          <div class="social">
+            <div>📷 Instagram</div>
+            <div>👍 Facebook</div>
+            <div>🐦 X</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:1rem; font-size:0.75rem;">
+        © 2025 Trattoria La Pasta. Todos los derechos reservados.
+      </div>
+    </footer>
+  </main>
+
+  <!-- Botón de reservas fijo -->
+  <button class="reservation-btn" aria-label="Reservar mesa" onclick="openModal()">
+    🗓️ Reservas
+  </button>
+
+  <!-- Modal de reserva -->
+  <div class="overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header>
+        <h2 id="modalTitle">Reservar mesa</h2>
+        <button class="close-btn" aria-label="Cerrar" onclick="closeModal()">×</button>
+      </header>
+      <div id="statusMessage" class="status" aria-live="polite"></div>
+      <form id="reservationForm" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: María López" required />
+        </div>
+        <div class="form-group">
+          <label for="email_cliente">Correo electrónico</label>
+          <input type="email" id="email_cliente" name="email_cliente" placeholder="tú@correo.com" required />
+        </div>
+        <div class="form-group">
+          <label for="fecha_hora">¿Cuándo reservarás?</label>
+          <input type="datetime-local" id="fecha_hora" name="fecha_hora" required />
+        </div>
+        <div class="form-group">
+          <label for="personas">¿Cuántas personas?</label>
+          <select id="personas" name="personas" required>
+            <option value="">Selecciona</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="menu">¿Qué menú quieren?</label>
+          <select id="menu" name="menu" required>
+            <option value="">Selecciona</option>
+            <option>Spaghetti Carbonara</option>
+            <option>Lasagna al forno</option>
+            <option>Tagliatelle al pesto</option>
+            <option>Menú degustación (varios)</option>
+          </select>
+        </div>
+        <div class="submit-row">
+          <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" id="sendBtn">Enviar reserva</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
